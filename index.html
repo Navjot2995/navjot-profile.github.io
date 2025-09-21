@@ -6,644 +6,178 @@
     <title>Navjot Singh | AI/ML Engineer & Data Scientist</title>
     <meta name="description" content="Navjot Singh - AI/ML Engineer & Data Scientist specializing in production-grade LLM applications, RAG systems, and autonomous AI agents">
     <meta name="keywords" content="AI Engineer, Machine Learning, Data Scientist, LLM, RAG, Python, LangChain">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Canonical & favicons -->
+    <link rel="canonical" href="https://dataterra.ai/" />
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0f0f1e">
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dataterra.ai/">
+    <meta property="og:title" content="Navjot Singh | AI/ML Engineer & Data Scientist">
+    <meta property="og:description" content="LLM apps, RAG, multi-agent systems. Production-grade AI that moves KPIs.">
+    <meta property="og:image" content="https://dataterra.ai/og-cover.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@aiwithnavjot">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="Navjot Singh RSS" href="/feed.xml">
+
+    <!-- Fonts / perf hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Analytics 4 (replace G-XXXXXXX) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date()); 
+      gtag('config', 'G-XXXXXXX');
+    </script>
+
+    <!-- WebSite + Person + FAQ schema (rich snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@graph":[
+        {
+          "@type":"WebSite",
+          "url":"https://dataterra.ai/",
+          "name":"Navjot Singh | AI/ML Engineer & Data Scientist",
+          "potentialAction":{
+            "@type":"SearchAction",
+            "target":"https://dataterra.ai/?q={search_term_string}",
+            "query-input":"required name=search_term_string"
+          }
+        },
+        {
+          "@type":"Person",
+          "name":"Navjot Singh",
+          "url":"https://dataterra.ai/",
+          "image":"https://i.ibb.co/yP44s0Y/image_NAv.jpg",
+          "sameAs":[
+            "https://linkedin.com/in/navjot-singh-6a1012231",
+            "https://github.com/navjot-profile"
+          ],
+          "jobTitle":"AI/ML Engineer & Data Scientist",
+          "knowsAbout":["LLM","RAG","LangChain","MLOps","Autonomous Agents"],
+          "email":"mailto:Navjot2995@gmail.com"
+        },
+        {
+          "@type":"FAQPage",
+          "mainEntity":[
+            {
+              "@type":"Question",
+              "name":"Do you build production-grade LLM and RAG systems?",
+              "acceptedAnswer":{"@type":"Answer","text":"Yes. I design, ship and monitor LLM apps with retrieval, evals, guardrails and CI/CD across AWS/GCP."}
+            },
+            {
+              "@type":"Question",
+              "name":"Do you take freelance/consulting projects?",
+              "acceptedAnswer":{"@type":"Answer","text":"Yes. I work with startups and SMEs. Typical engagements: AI roadmap, agentic automations, and end-to-end delivery."}
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #ffffff;
-            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
-            overflow-x: hidden;
-        }
-
-        /* Animated Background */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.1;
-        }
-
-        .particle {
-            position: absolute;
-            background: linear-gradient(45deg, #00d4ff, #ff00ea);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 1rem 0;
-            background: rgba(15, 15, 30, 0.95);
-            backdrop-filter: blur(20px);
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(45deg, #00d4ff, #ff00ea);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(45deg, #00d4ff, #ff00ea);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #00d4ff;
-            transform: translateY(-2px);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: linear-gradient(45deg, #00d4ff, #ff00ea);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .blog-card-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            padding: 0 2rem;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-title {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 900;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #00d4ff, #ff00ea, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 200% auto;
-            animation: shimmer 5s linear infinite;
-        }
-
-        @keyframes shimmer {
-            to {
-                background-position: 200% center;
-            }
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            opacity: 0.8;
-            line-height: 1.8;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, #00d4ff, #ff00ea);
-            color: white;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid #00d4ff;
-        }
-        
-        .btn-ai {
-             background: linear-gradient(45deg, #27AE60, #2ECC71);
-             color: white;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 3rem;
-            background: linear-gradient(45deg, #00d4ff, #ff00ea);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-image {
-            position: relative;
-        }
-
-        .profile-image {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 50%;
-            border: 5px solid;
-            border-image-slice: 1;
-            border-image-source: linear-gradient(45deg, #00d4ff, #ff00ea);
-            margin: 0 auto;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4); }
-            70% { box-shadow: 0 0 0 30px rgba(0, 212, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
-        }
-
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #00d4ff;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Skills Section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-10px);
-        }
-
-        .skill-category h3 {
-            color: #00d4ff;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background: linear-gradient(45deg, #00d4ff20, #ff00ea20);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            font-size: 0.9rem;
-            color: #ffffff;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
-        }
-        
-        .project-header {
-            padding: 1.5rem;
-            background: linear-gradient(45deg, #00d4ff10, #ff00ea10);
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #00d4ff;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-description {
-            opacity: 0.9;
-            margin-bottom: 1rem;
-            flex-grow: 1;
-        }
-        
-        .project-impact {
-            background: rgba(39, 174, 96, 0.1);
-            color: #27AE60;
-            padding: 0.5rem 1rem;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            border: 1px solid rgba(39, 174, 96, 0.3);
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .project-links {
-            padding: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .project-link {
-            color: #00d4ff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .project-link:hover {
-            color: #ff00ea;
-            transform: translateX(5px);
-        }
-
-        /* Experience Section */
-        .experience-timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .timeline-line {
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #00d4ff, #ff00ea);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            padding-left: 3rem;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: -0.6rem;
-            top: 0.5rem;
-            width: 1.2rem;
-            height: 1.2rem;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #00d4ff, #ff00ea);
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-        }
-
-        .timeline-content {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .timeline-date {
-            color: #00d4ff;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-company {
-            color: #ff00ea;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .achievement-highlight {
-            background: rgba(0, 212, 255, 0.1);
-            padding: 1rem;
-            border-radius: 10px;
-            margin-top: 1rem;
-            border-left: 3px solid #00d4ff;
-        }
-
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: flex-start;
-        }
-
-        .contact-info h3 {
-            color: #00d4ff;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-info p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .contact-link:hover {
-            background: rgba(0, 212, 255, 0.1);
-            transform: translateX(10px);
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-            color: #00d4ff;
-            width: 2rem;
-            text-align: center;
-        }
-
-        .contact-form {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #00d4ff;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            color: #ffffff;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #00d4ff;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
-        }
-
-        #gemini-loader {
-            display: none;
-            text-align: center;
-            margin: 1rem 0;
-            color: #00d4ff;
-        }
-
-        #gemini-response {
-            background-color: rgba(0, 212, 255, 0.05);
-            border-left: 4px solid #00d4ff;
-            padding: 1rem;
-            margin-top: 1.5rem;
-            border-radius: 0.25rem;
-        }
-        
-        #gemini-response h3 {
-             color: #00d4ff;
-             margin-bottom: 0.5rem;
-        }
-        
-        #gemini-response ul {
-            list-style-position: inside;
-            padding-left: 1rem;
-        }
-        
-        #gemini-response li {
-            margin-bottom: 0.5rem;
-        }
-
-
-        /* Footer */
-        footer {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .footer-socials a {
-            color: #00d4ff;
-            margin: 0 1rem;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-socials a:hover {
-            color: #ff00ea;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out both;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero-title { font-size: 3rem; }
-            .about-content { grid-template-columns: 1fr; text-align: center; }
-            .contact-container { grid-template-columns: 1fr; }
-            section { padding: 3rem 1rem; }
-            .timeline-item { padding-left: 2rem; }
-            .timeline-dot { left: -0.6rem; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: #ffffff; background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%); overflow-x: hidden; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.1; }
+        .particle { position: absolute; background: linear-gradient(45deg, #00d4ff, #ff00ea); border-radius: 50%; animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-20px) rotate(180deg); } }
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1rem 0; background: rgba(15, 15, 30, 0.95); backdrop-filter: blur(20px); transition: all 0.3s ease; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; background: linear-gradient(45deg, #00d4ff, #ff00ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: #ffffff; text-decoration: none; font-weight: 500; transition: all 0.3s ease; position: relative; }
+        .nav-links a:hover { color: #00d4ff; transform: translateY(-2px); }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0; background: linear-gradient(45deg, #00d4ff, #ff00ea); transition: width 0.3s ease; }
+        .nav-links a:hover::after { width: 100%; }
+        .blog-card-image { width: 100%; height: 200px; object-fit: cover; }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 0 2rem; }
+        .hero-content { max-width: 800px; animation: fadeInUp 1s ease-out; }
+        .hero-title { font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; margin-bottom: 1rem; background: linear-gradient(45deg, #00d4ff, #ff00ea, #00ff88); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; background-size: 200% auto; animation: shimmer 5s linear infinite; }
+        @keyframes shimmer { to { background-position: 200% center; } }
+        .hero-subtitle { font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.9; }
+        .hero-description { font-size: 1.1rem; margin-bottom: 3rem; opacity: 0.8; line-height: 1.8; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; cursor: pointer; }
+        .btn-primary { background: linear-gradient(45deg, #00d4ff, #ff00ea); color: white; }
+        .btn-secondary { background: transparent; color: white; border: 2px solid #00d4ff; }
+        .btn-ai { background: linear-gradient(45deg, #27AE60, #2ECC71); color: white; }
+        .btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3); }
+        section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 3rem; font-weight: 800; margin-bottom: 3rem; background: linear-gradient(45deg, #00d4ff, #ff00ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .about-content { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; }
+        .about-image { position: relative; }
+        .profile-image { width: 100%; max-width: 300px; border-radius: 50%; border: 5px solid; border-image-slice: 1; border-image-source: linear-gradient(45deg, #00d4ff, #ff00ea); margin: 0 auto; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4); } 70% { box-shadow: 0 0 0 30px rgba(0, 212, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); } }
+        .about-text h3 { font-size: 2rem; margin-bottom: 1rem; color: #00d4ff; }
+        .about-text p { margin-bottom: 1.5rem; font-size: 1.1rem; opacity: 0.9; }
+        .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .skill-category { background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: transform 0.3s ease; }
+        .skill-category:hover { transform: translateY(-10px); }
+        .skill-category h3 { color: #00d4ff; margin-bottom: 1rem; font-size: 1.5rem; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .skill-tag { background: linear-gradient(45deg, #00d4ff20, #ff00ea20); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid rgba(0, 212, 255, 0.3); font-size: 0.9rem; color: #ffffff; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .project-card { background: rgba(255, 255, 255, 0.05); border-radius: 20px; overflow: hidden; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease; position: relative; display: flex; flex-direction: column; }
+        .project-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2); }
+        .project-header { padding: 1.5rem; background: linear-gradient(45deg, #00d4ff10, #ff00ea10); flex-grow: 1; display: flex; flex-direction: column; }
+        .project-title { font-size: 1.5rem; font-weight: 700; color: #00d4ff; margin-bottom: 0.5rem; }
+        .project-description { opacity: 0.9; margin-bottom: 1rem; flex-grow: 1; }
+        .project-impact { background: rgba(39, 174, 96, 0.1); color: #27AE60; padding: 0.5rem 1rem; border-radius: 10px; margin-bottom: 1rem; font-weight: 600; border: 1px solid rgba(39, 174, 96, 0.3); }
+        .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+        .project-links { padding: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .project-link { color: #00d4ff; text-decoration: none; transition: all 0.3s ease; }
+        .project-link:hover { color: #ff00ea; transform: translateX(5px); }
+        .experience-timeline { position: relative; padding-left: 2rem; }
+        .timeline-line { position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, #00d4ff, #ff00ea); }
+        .timeline-item { position: relative; margin-bottom: 3rem; padding-left: 3rem; }
+        .timeline-dot { position: absolute; left: -0.6rem; top: 0.5rem; width: 1.2rem; height: 1.2rem; border-radius: 50%; background: linear-gradient(45deg, #00d4ff, #ff00ea); box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+        .timeline-content { background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .timeline-date { color: #00d4ff; font-weight: 600; margin-bottom: 0.5rem; }
+        .timeline-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .timeline-company { color: #ff00ea; font-weight: 600; margin-bottom: 1rem; }
+        .achievement-highlight { background: rgba(0, 212, 255, 0.1); padding: 1rem; border-radius: 10px; margin-top: 1rem; border-left: 3px solid #00d4ff; }
+        .blog-widget { background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 3rem; }
+        .blog-widget h3 { color: #00d4ff; margin-bottom: 1.5rem; text-align: center; font-size: 1.8rem; }
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: flex-start; }
+        .contact-info h3 { color: #00d4ff; font-size: 2rem; margin-bottom: 1rem; }
+        .contact-info p { font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9; }
+        .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+        .contact-link { display: flex; align-items: center; gap: 1rem; color: #ffffff; text-decoration: none; padding: 1rem; background: rgba(255, 255, 255, 0.05); border-radius: 15px; transition: all 0.3s ease; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .contact-link:hover { background: rgba(0, 212, 255, 0.1); transform: translateX(10px); }
+        .contact-icon { font-size: 1.5rem; color: #00d4ff; width: 2rem; text-align: center; }
+        .contact-form { background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; color: #00d4ff; font-weight: 600; }
+        .form-group input, .form-group textarea { width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; color: #ffffff; font-size: 1rem; font-family: 'Inter', sans-serif; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #00d4ff; box-shadow: 0 0 20px rgba(0, 212, 255, 0.2); }
+        #gemini-loader { display: none; text-align: center; margin: 1rem 0; color: #00d4ff; }
+        #gemini-response { background-color: rgba(0, 212, 255, 0.05); border-left: 4px solid #00d4ff; padding: 1rem; margin-top: 1.5rem; border-radius: 0.25rem; }
+        #gemini-response h3 { color: #00d4ff; margin-bottom: 0.5rem; }
+        #gemini-response ul { list-style-position: inside; padding-left: 1rem; }
+        #gemini-response li { margin-bottom: 0.5rem; }
+        footer { background: rgba(0, 0, 0, 0.3); padding: 2rem; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .footer-socials a { color: #00d4ff; margin: 0 1rem; font-size: 1.5rem; transition: color 0.3s ease; }
+        .footer-socials a:hover { color: #ff00ea; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px);} to { opacity: 1; transform: translateY(0);} }
+        .fade-in-up { animation: fadeInUp 0.8s ease-out both; }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero-title { font-size: 3rem; } .about-content { grid-template-columns: 1fr; text-align: center; } .contact-container { grid-template-columns: 1fr; } section { padding: 3rem 1rem; } .timeline-item { padding-left: 2rem; } .timeline-dot { left: -0.6rem; } }
     </style>
 </head>
 <body>
@@ -660,51 +194,42 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Navjot Singh</h1>
             <h2 class="hero-subtitle">AI/ML Engineer & Data Scientist</h2>
-            <p class="hero-description">
-                Building production-grade AI systems that solve real-world problems. I blend hands-on ML engineering, data analytics, and MLOps to ship reliable, real-world AI solutions.
-            </p>
+            <p class="hero-description">Building production-grade AI systems that solve real-world problems. I blend hands-on ML engineering, data analytics, and MLOps to ship reliable, real-world AI solutions.</p>
             <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">
-                    <i class="fas fa-rocket"></i> View My Work
-                </a>
-                <a href="Navjot_Singh_Resume_A5.pdf" download class="btn btn-secondary">
-                    <i class="fas fa-download"></i> Download Resume
-                </a>
+                <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View My Work</a>
+                <a href="Navjot_Singh_Resume_A5.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Download Resume</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-content fade-in-up">
             <div class="about-image">
-                 <img src="https://i.ibb.co/yP44s0Y/image-NAv.jpg" alt="Navjot Singh" class="profile-image">
+                 <img loading="lazy" src="https://i.ibb.co/yP44s0Y/image_NAv.jpg" alt="Portrait of Navjot Singh" class="profile-image">
             </div>
             <div class="about-text">
                 <h3>Transforming Data into Intelligence</h3>
-                <p>
-                    I'm a results-driven engineer specializing in production-grade LLM apps, RAG systems, and autonomous AI agents. My expertise spans from traditional data science to cutting-edge generative AI, and I've successfully deployed systems that reduced support tickets by 30%, automated complex workflows, and improved business efficiency.
-                </p>
-                <p>
-                    With a B.Tech in Computer Science, a PGP in Data Science from UT Austin, and an IBM AI Engineer Certification, I'm passionate about continuous learning and applying my skills to solve challenging problems. When I'm not coding, I enjoy reading, cricket, and exploring new podcasts.
-                </p>
+                <p>I'm a results-driven engineer specializing in production-grade LLM apps, RAG systems, and autonomous AI agents. My expertise spans from traditional data science to cutting-edge generative AI, and I've successfully deployed systems that reduced support tickets by 30%, automated complex workflows, and improved business efficiency.</p>
+                <p>With a B.Tech in Computer Science, a PGP in Data Science from UT Austin, and an IBM AI Engineer Certification, I'm passionate about continuous learning and applying my skills to solve challenging problems. When I'm not coding, I enjoy reading, cricket, and exploring new podcasts.</p>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills -->
     <section id="skills">
         <h2 class="section-title">Technical Expertise</h2>
         <div class="skills-container fade-in-up">
@@ -735,11 +260,11 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section id="projects">
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid fade-in-up">
-            <!-- Project 1 -->
+            <!-- Project cards (with UTM & share) -->
             <div class="project-card">
                 <div class="project-header">
                     <h3 class="project-title">Autonomous AI Agents for Business</h3>
@@ -750,38 +275,50 @@
                     </div>
                 </div>
                 <div class="project-links">
-                     <a href="#" class="project-link">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    <a class="project-link" href="https://dataterra.ai/case-studies/agents?utm_source=portfolio&utm_medium=btn&utm_campaign=projects">View Case Study <i class="fas fa-arrow-right"></i></a>
+                    <div style="margin-top:.75rem;display:flex;gap:1rem;flex-wrap:wrap">
+                      <a class="project-link" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdataterra.ai%2Fcase-studies%2Fagents" target="_blank" rel="noopener">Share on LinkedIn</a>
+                      <button class="project-link" style="background:none;border:none;cursor:pointer" onclick="copyShare('https://dataterra.ai/case-studies/agents')">Copy link</button>
+                    </div>
                 </div>
             </div>
-             <!-- Project 2 -->
+
             <div class="project-card">
                 <div class="project-header">
                     <h3 class="project-title">Enterprise RAG System</h3>
                     <p class="project-description">Architected an enterprise-grade retrieval-augmented generation pipeline.</p>
-                     <div class="project-impact"><i class="fas fa-tachometer-alt"></i> 50% Faster Document Retrieval</div>
+                    <div class="project-impact"><i class="fas fa-tachometer-alt"></i> 50% Faster Document Retrieval</div>
                     <div class="project-tech">
                         <span class="skill-tag">LangChain</span><span class="skill-tag">Vector DBs</span><span class="skill-tag">HuggingFace</span>
                     </div>
                 </div>
                 <div class="project-links">
-                    <a href="#" class="project-link">View Architecture <i class="fas fa-arrow-right"></i></a>
+                    <a class="project-link" href="https://dataterra.ai/case-studies/enterprise-rag?utm_source=portfolio&utm_medium=btn&utm_campaign=projects">View Architecture <i class="fas fa-arrow-right"></i></a>
+                    <div style="margin-top:.75rem;display:flex;gap:1rem;flex-wrap:wrap">
+                      <a class="project-link" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdataterra.ai%2Fcase-studies%2Fenterprise-rag" target="_blank" rel="noopener">Share on LinkedIn</a>
+                      <button class="project-link" style="background:none;border:none;cursor:pointer" onclick="copyShare('https://dataterra.ai/case-studies/enterprise-rag')">Copy link</button>
+                    </div>
                 </div>
             </div>
-             <!-- Project 3 -->
+
             <div class="project-card">
                 <div class="project-header">
                     <h3 class="project-title">Customer Sentiment Analysis API</h3>
                     <p class="project-description">Real-time sentiment and topic extraction system using a fine-tuned BERT model.</p>
-                     <div class="project-impact"><i class="fas fa-check-circle"></i> 92% Accuracy Rate</div>
+                    <div class="project-impact"><i class="fas fa-check-circle"></i> 92% Accuracy Rate</div>
                     <div class="project-tech">
                         <span class="skill-tag">FastAPI</span><span class="skill-tag">HuggingFace</span><span class="skill-tag">Docker</span><span class="skill-tag">GCP</span>
                     </div>
                 </div>
                 <div class="project-links">
-                    <a href="#" class="project-link">Try the API <i class="fas fa-arrow-right"></i></a>
+                    <a class="project-link" href="https://dataterra.ai/case-studies/sentiment-api?utm_source=portfolio&utm_medium=btn&utm_campaign=projects">Try the API <i class="fas fa-arrow-right"></i></a>
+                    <div style="margin-top:.75rem;display:flex;gap:1rem;flex-wrap:wrap">
+                      <a class="project-link" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdataterra.ai%2Fcase-studies%2Fsentiment-api" target="_blank" rel="noopener">Share on LinkedIn</a>
+                      <button class="project-link" style="background:none;border:none;cursor:pointer" onclick="copyShare('https://dataterra.ai/case-studies/sentiment-api')">Copy link</button>
+                    </div>
                 </div>
             </div>
-             <!-- Project 4 -->
+
             <div class="project-card">
                 <div class="project-header">
                     <h3 class="project-title">Capacity Automation Tool (Award-Winning)</h3>
@@ -792,10 +329,14 @@
                     </div>
                 </div>
                 <div class="project-links">
-                    <a href="#" class="project-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a class="project-link" href="https://dataterra.ai/case-studies/capacity-automation?utm_source=portfolio&utm_medium=btn&utm_campaign=projects">Read More <i class="fas fa-arrow-right"></i></a>
+                    <div style="margin-top:.75rem;display:flex;gap:1rem;flex-wrap:wrap">
+                      <a class="project-link" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdataterra.ai%2Fcase-studies%2Fcapacity-automation" target="_blank" rel="noopener">Share on LinkedIn</a>
+                      <button class="project-link" style="background:none;border:none;cursor:pointer" onclick="copyShare('https://dataterra.ai/case-studies/capacity-automation')">Copy link</button>
+                    </div>
                 </div>
             </div>
-             <!-- Project 5 -->
+
             <div class="project-card">
                 <div class="project-header">
                     <h3 class="project-title">MLOps CI/CD Pipeline</h3>
@@ -806,10 +347,14 @@
                     </div>
                 </div>
                 <div class="project-links">
-                    <a href="#" class="project-link">See on GitHub <i class="fas fa-arrow-right"></i></a>
+                    <a class="project-link" href="https://dataterra.ai/case-studies/mlops-cicd?utm_source=portfolio&utm_medium=btn&utm_campaign=projects">See on GitHub <i class="fas fa-arrow-right"></i></a>
+                    <div style="margin-top:.75rem;display:flex;gap:1rem;flex-wrap:wrap">
+                      <a class="project-link" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdataterra.ai%2Fcase-studies%2Fmlops-cicd" target="_blank" rel="noopener">Share on LinkedIn</a>
+                      <button class="project-link" style="background:none;border:none;cursor:pointer" onclick="copyShare('https://dataterra.ai/case-studies/mlops-cicd')">Copy link</button>
+                    </div>
                 </div>
             </div>
-            <!-- Project 6 -->
+
             <div class="project-card">
                 <div class="project-header">
                     <h3 class="project-title">Interactive Sales Forecast Dashboard</h3>
@@ -820,127 +365,235 @@
                     </div>
                 </div>
                 <div class="project-links">
-                    <a href="#" class="project-link">View Dashboard <i class="fas fa-arrow-right"></i></a>
+                    <a class="project-link" href="https://dataterra.ai/case-studies/forecast-dashboard?utm_source=portfolio&utm_medium=btn&utm_campaign=projects">View Dashboard <i class="fas fa-arrow-right"></i></a>
+                    <div style="margin-top:.75rem;display:flex;gap:1rem;flex-wrap:wrap">
+                      <a class="project-link" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdataterra.ai%2Fcase-studies%2Fforecast-dashboard" target="_blank" rel="noopener">Share on LinkedIn</a>
+                      <button class="project-link" style="background:none;border:none;cursor:pointer" onclick="copyShare('https://dataterra.ai/case-studies/forecast-dashboard')">Copy link</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">AI Content Generation Platform</h3>
+                    <p class="project-description">Developed a web platform using the Gemini API to generate high-quality, tailored marketing copy, blog posts, and social media content.</p>
+                    <div class="project-impact"><i class="fas fa-feather-alt"></i> 60% Faster Content Creation</div>
+                    <div class="project-tech">
+                        <span class="skill-tag">Gemini API</span><span class="skill-tag">Python</span><span class="skill-tag">FastAPI</span><span class="skill-tag">React</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a class="project-link" href="https://dataterra.ai/case-studies/ai-content-platform?utm_source=portfolio&utm_medium=btn&utm_campaign=projects">Explore the Tool <i class="fas fa-arrow-right"></i></a>
+                    <div style="margin-top:.75rem;display:flex;gap:1rem;flex-wrap:wrap">
+                      <a class="project-link" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdataterra.ai%2Fcase-studies%2Fai-content-platform" target="_blank" rel="noopener">Share on LinkedIn</a>
+                      <button class="project-link" style="background:none;border:none;cursor:pointer" onclick="copyShare('https://dataterra.ai/case-studies/ai-content-platform')">Copy link</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Real-Time Anomaly Detection System</h3>
+                    <p class="project-description">Engineered a scalable system for a fintech client to detect fraudulent transactions in real-time using unsupervised machine learning.</p>
+                    <div class="project-impact"><i class="fas fa-shield-alt"></i> 25% Improvement in Fraud Detection</div>
+                    <div class="project-tech">
+                        <span class="skill-tag">Scikit-learn</span><span class="skill-tag">Kafka</span><span class="skill-tag">Python</span><span class="skill-tag">AWS</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a class="project-link" href="https://dataterra.ai/case-studies/anomaly-detection?utm_source=portfolio&utm_medium=btn&utm_campaign=projects">View Technical Brief <i class="fas fa-arrow-right"></i></a>
+                    <div style="margin-top:.75rem;display:flex;gap:1rem;flex-wrap:wrap">
+                      <a class="project-link" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdataterra.ai%2Fcase-studies%2Fanomaly-detection" target="_blank" rel="noopener">Share on LinkedIn</a>
+                      <button class="project-link" style="background:none;border:none;cursor:pointer" onclick="copyShare('https://dataterra.ai/case-studies/anomaly-detection')">Copy link</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Personalized Recommendation Engine</h3>
+                    <p class="project-description">Built and deployed a collaborative filtering recommendation engine for an e-commerce platform to provide personalized product suggestions.</p>
+                    <div class="project-impact"><i class="fas fa-thumbs-up"></i> 18% Increase in User Engagement</div>
+                    <div class="project-tech">
+                        <span class="skill-tag">Pandas</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">SQL</span><span class="skill-tag">Surprise</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a class="project-link" href="https://dataterra.ai/case-studies/reco-engine?utm_source=portfolio&utm_medium=btn&utm_campaign=projects">See the Algorithm <i class="fas fa-arrow-right"></i></a>
+                    <div style="margin-top:.75rem;display:flex;gap:1rem;flex-wrap:wrap">
+                      <a class="project-link" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdataterra.ai%2Fcase-studies%2Freco-engine" target="_blank" rel="noopener">Share on LinkedIn</a>
+                      <button class="project-link" style="background:none;border:none;cursor:pointer" onclick="copyShare('https://dataterra.ai/case-studies/reco-engine')">Copy link</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience -->
     <section id="experience">
         <h2 class="section-title">Professional Experience</h2>
         <div class="experience-timeline fade-in-up">
             <div class="timeline-line"></div>
-            
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-date">November 2024 – Present</div>
                     <h3 class="timeline-title">Freelance AI Engineer & Data Scientist</h3>
                     <div class="timeline-company">Remote</div>
-                    <div class="achievement-highlight">
-                         Built & deployed LLM chatbots, designed autonomous agents for sales/marketing, and architected LangChain + vector DB pipelines improving document retrieval speed by ~50%.
-                    </div>
+                    <div class="achievement-highlight">Built & deployed LLM chatbots, designed autonomous agents for sales/marketing, and architected LangChain + vector DB pipelines improving document retrieval speed by ~50%.</div>
                 </div>
             </div>
-
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-date">January 2024 – September 2024</div>
                     <h3 class="timeline-title">Business Analyst</h3>
                     <div class="timeline-company">American Express</div>
-                     <div class="achievement-highlight">
-                        Created Python automations cutting manual data processing by ~25%. Awarded for a "Capacity Automation Tool" forecasting workload with ~90% accuracy.
-                    </div>
+                    <div class="achievement-highlight">Created Python automations cutting manual data processing by ~25%. Awarded for a "Capacity Automation Tool" forecasting workload with ~90% accuracy.</div>
                 </div>
             </div>
-
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-date">September 2021 – January 2023</div>
                     <h3 class="timeline-title">Data Analyst</h3>
                     <div class="timeline-company">IWD Technologies</div>
-                     <div class="achievement-highlight">
-                        Built a web-scraping pipeline expanding a competitive dataset by ~200%. Delivered SEO ML models that boosted organic traffic ~15% in 6 months.
-                    </div>
+                    <div class="achievement-highlight">Built a web-scraping pipeline expanding a competitive dataset by ~200%. Delivered SEO ML models that boosted organic traffic ~15% in 6 months.</div>
                 </div>
             </div>
-             <div class="timeline-item">
+            <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <div class="timeline-date">March 2020 – September 2021</div>
                     <h3 class="timeline-title">Business Development Executive</h3>
                     <div class="timeline-company">IWD Technologies</div>
-                     <div class="achievement-highlight">
-                        Sourced and qualified leads on platforms like Upwork, managed client relationships, and ensured high-quality, on-time project delivery for SMO projects.
-                    </div>
+                    <div class="achievement-highlight">Sourced and qualified leads on platforms like Upwork, managed client relationships, and ensured high-quality, on-time project delivery for SMO projects.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Blog Section -->
+    <!-- FAQ -->
+    <section id="faq">
+      <h2 class="section-title">FAQ</h2>
+      <div class="skills-container">
+        <details class="skill-category"><summary><h3>Do you build production-grade LLM & RAG systems?</h3></summary>
+          <p style="margin-top:1rem">Yes—LangChain/LangGraph, evals, vector DBs, guardrails, and CI/CD. See <a class="project-link" href="#projects">Featured Projects</a>.</p>
+        </details>
+        <details class="skill-category"><summary><h3>How to start a project?</h3></summary>
+          <p style="margin-top:1rem">Email me or use the form. I’ll reply with a 15-min slot + checklist to scope impact, data, and KPIs.</p>
+        </details>
+        <details class="skill-category"><summary><h3>Typical timelines & pricing?</h3></summary>
+          <p style="margin-top:1rem">MVPs: 2–4 weeks. Automations: 1–2 weeks. Fixed-fee sprints or retainers. Get a quote via <a class="project-link" href="#contact">Contact</a>.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Blog -->
     <section id="blog">
         <h2 class="section-title">Blog & Insights</h2>
-        <div class="projects-grid fade-in-up">
-            <!-- Blog Post 1 -->
+        <div class="blog-widget fade-in-up">
+            <h3>Add a New Blog Post</h3>
+            <form id="blog-widget-form">
+                <div class="form-group">
+                    <label for="blog-url">Blog Post URL</label>
+                    <input type="url" id="blog-url" placeholder="https://medium.com/..." required>
+                </div>
+                <div class="form-group">
+                    <label for="blog-title">Title</label>
+                    <input type="text" id="blog-title" placeholder="e.g., Building Production-Ready LLM Apps" required>
+                </div>
+                <div class="form-group">
+                    <label for="blog-description">Short Description</label>
+                    <textarea id="blog-description" rows="3" placeholder="A brief summary of your article..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="blog-image">Image URL (Optional)</label>
+                    <input type="url" id="blog-image" placeholder="https://placehold.co/...">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fas fa-plus-circle"></i> Add Post</button>
+            </form>
+        </div>
+
+        <div id="blog-posts-container" class="projects-grid fade-in-up">
             <div class="project-card">
-                <img src="https://placehold.co/600x400/16213e/FFFFFF?text=LLM+Apps" alt="Building Production-Ready LLM Applications" class="blog-card-image">
+                <img loading="lazy" src="https://placehold.co/600x400/16213e/FFFFFF?text=LLM+Apps" alt="Building Production-Ready LLM Applications" class="blog-card-image">
                 <div class="project-header">
                     <h3 class="project-title">Building Production-Ready LLM Applications</h3>
                     <p class="project-description">A deep dive into the architecture, challenges, and best practices for deploying robust and scalable LLM-powered systems.</p>
                 </div>
                 <div class="project-links">
-                     <a href="#" class="project-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://dataterra.ai/blog/production-llm-apps?utm_source=portfolio&utm_medium=blog&utm_campaign=internal" class="project-link" target="_blank" rel="noopener noreferrer">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <!-- Blog Post 2 -->
             <div class="project-card">
-                <img src="https://placehold.co/600x400/16213e/FFFFFF?text=Business+Impact" alt="From Data Analysis to Business Impact" class="blog-card-image">
+                <img loading="lazy" src="https://placehold.co/600x400/16213e/FFFFFF?text=Business+Impact" alt="From Data Analysis to Business Impact" class="blog-card-image">
                 <div class="project-header">
                     <h3 class="project-title">From Data Analysis to Business Impact</h3>
                     <p class="project-description">Lessons learned in translating complex data insights into actionable strategies that drive tangible business outcomes.</p>
                 </div>
                 <div class="project-links">
-                     <a href="#" class="project-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://dataterra.ai/blog/data-to-impact?utm_source=portfolio&utm_medium=blog&utm_campaign=internal" class="project-link" target="_blank" rel="noopener noreferrer">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <!-- Blog Post 3 -->
             <div class="project-card">
-                 <img src="https://placehold.co/600x400/16213e/FFFFFF?text=MLOps" alt="MLOps Best Practices for Small Teams" class="blog-card-image">
+                <img loading="lazy" src="https://placehold.co/600x400/16213e/FFFFFF?text=MLOps" alt="MLOps Best Practices for Small Teams" class="blog-card-image">
                 <div class="project-header">
                     <h3 class="project-title">MLOps Best Practices for Small Teams</h3>
                     <p class="project-description">Practical advice on implementing efficient MLOps pipelines without the need for large-scale infrastructure.</p>
                 </div>
                 <div class="project-links">
-                     <a href="#" class="project-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://dataterra.ai/blog/mlops-small-teams?utm_source=portfolio&utm_medium=blog&utm_campaign=internal" class="project-link" target="_blank" rel="noopener noreferrer">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <!-- Blog Post 4 -->
             <div class="project-card">
-                 <img src="https://placehold.co/600x400/16213e/FFFFFF?text=AI+Agents" alt="The Evolution of AI Agents in Business" class="blog-card-image">
+                <img loading="lazy" src="https://placehold.co/600x400/16213e/FFFFFF?text=AI+Agents" alt="The Evolution of AI Agents in Business" class="blog-card-image">
                 <div class="project-header">
                     <h3 class="project-title">The Evolution of AI Agents in Business</h3>
                     <p class="project-description">Exploring the rise of autonomous agents and their transformative potential in automating complex business processes.</p>
                 </div>
                 <div class="project-links">
-                     <a href="#" class="project-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://dataterra.ai/blog/ai-agents-evolution?utm_source=portfolio&utm_medium=blog&utm_campaign=internal" class="project-link" target="_blank" rel="noopener noreferrer">Read More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Subscribe / Lead Magnet -->
+    <section id="subscribe">
+      <h2 class="section-title">Free Guide: “RAG that Actually Works”</h2>
+      <div class="contact-container fade-in-up">
+        <div class="contact-info">
+          <h3>Grab the 12-step checklist</h3>
+          <p>Battle-tested notes on evals, chunking, embeddings, latency, and guardrails. Join the list—get updates & new case studies.</p>
+          <ul style="opacity:.9;line-height:1.9">
+            <li>✅ PDF checklist + sample prompts</li>
+            <li>✅ Monthly teardown of one AI product</li>
+            <li>✅ Early access to open-source starters</li>
+          </ul>
+        </div>
+        <div class="contact-form">
+          <!-- Replace action with your Formspree/Netlify endpoint -->
+          <form action="https://formspree.io/f/your-id" method="POST" id="subscribe-form">
+            <div class="form-group">
+              <label for="sub-email">Email</label>
+              <input id="sub-email" name="email" type="email" required placeholder="you@example.com">
+            </div>
+            <input type="hidden" name="tag" value="rag-checklist">
+            <button class="btn btn-primary" style="width:100%"><i class="fas fa-envelope-open-text"></i> Send me the guide</button>
+            <p style="font-size:.85rem;opacity:.8;margin-top:.75rem">No spam. Unsubscribe anytime.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact">
         <h2 class="section-title">Let's Build Something Amazing</h2>
         <div class="contact-container fade-in-up">
             <div class="contact-info">
                 <h3>Ready to Innovate?</h3>
-                <p>
-                    I'm always excited to discuss new opportunities. Whether you're looking to implement cutting-edge AI solutions or need consultation on your data strategy, let's connect.
-                </p>
+                <p>I'm always excited to discuss new opportunities. Whether you're looking to implement cutting-edge AI solutions or need consultation on your data strategy, let's connect.</p>
                 <div class="contact-links">
                     <a href="mailto:Navjot2995@gmail.com" class="contact-link">
                         <i class="fas fa-envelope contact-icon"></i>
@@ -954,6 +607,9 @@
                         <i class="fab fa-github contact-icon"></i>
                         <div><strong>GitHub</strong><div>/navjot-profile</div></div>
                     </a>
+                </div>
+                <div style="margin-top:1.25rem">
+                  <a class="btn btn-secondary" href="https://cal.com/your-username/15min?utm_source=portfolio&utm_medium=cta">Book a 15‑min Call</a>
                 </div>
             </div>
             <div class="contact-form">
@@ -971,12 +627,8 @@
                         <textarea id="project-description-form" name="message" rows="5" required></textarea>
                     </div>
                     <div class="cta-buttons" style="flex-direction: column; gap: 1rem;">
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                         <button type="button" id="gemini-button" class="btn btn-ai" style="width: 100%;">
-                            <i class="fas fa-lightbulb"></i> Get AI Project Ideas
-                        </button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fas fa-paper-plane"></i> Send Message</button>
+                        <button type="button" id="gemini-button" class="btn btn-ai" style="width: 100%;"><i class="fas fa-lightbulb"></i> Get AI Project Ideas</button>
                     </div>
                 </form>
                 <div id="gemini-loader"><p>🤖 Thinking... Please wait.</p></div>
@@ -989,7 +641,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Navjot Singh. Built with passion for AI and innovation.</p>
+        <p>&copy; 2025 Navjot Singh. Built with passion for AI and innovation.</p>
         <div class="footer-socials" style="margin-top: 1rem;">
             <a href="https://linkedin.com/in/navjot-singh-6a1012231" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/navjot-profile" target="_blank"><i class="fab fa-github"></i></a>
@@ -997,7 +649,8 @@
         </div>
     </footer>
 
-    <script>
+    <!-- Main Scripts (deferred) -->
+    <script defer>
         // Animated Background Particles
         function createParticles() {
             const container = document.getElementById('bgAnimation');
@@ -1014,23 +667,14 @@
                 container.appendChild(particle);
             }
         }
-        
         // Intersection Observer for Animations
         function initScrollAnimations() {
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in-up');
-                    }
-                });
+                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('fade-in-up'); } });
             }, { threshold: 0.1 });
             document.querySelectorAll('section > div').forEach(el => observer.observe(el));
         }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            createParticles();
-            initScrollAnimations();
-        });
+        document.addEventListener('DOMContentLoaded', () => { createParticles(); initScrollAnimations(); });
 
         // --- Gemini API Feature ---
         const geminiButton = document.getElementById('gemini-button');
@@ -1039,67 +683,127 @@
         const geminiResponseContainer = document.getElementById('gemini-response-container');
         const geminiResponseDiv = document.getElementById('gemini-response');
         const contactForm = document.getElementById('contact-form-main');
+        const blogWidgetForm = document.getElementById('blog-widget-form');
 
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Thank you for your message! I will get back to you shortly.');
             contactForm.reset();
             geminiResponseContainer.classList.add('hidden');
+            if(window.gtag){ gtag('event','lead_submitted',{source:'contact_form'}); }
         });
 
-        geminiButton.addEventListener('click', async () => {
-            const description = projectDescription.value;
-            if (description.trim().length < 20) {
-                alert('Please provide a more detailed project description (at least 20 characters) to get AI ideas.');
-                return;
-            }
+        blogWidgetForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const url = document.getElementById('blog-url').value;
+            const title = document.getElementById('blog-title').value;
+            const description = document.getElementById('blog-description').value;
+            const image = document.getElementById('blog-image').value || `https://placehold.co/600x400/16213e/FFFFFF?text=${encodeURIComponent(title)}`;
 
-            geminiLoader.style.display = 'block';
-            geminiResponseContainer.classList.add('hidden');
-            geminiButton.disabled = true;
-            geminiButton.style.opacity = '0.5';
-
-            const systemPrompt = `You are an expert AI/ML consultant reviewing a potential project idea for Navjot Singh, an AI/ML Engineer. Your goal is to provide 3-4 concise, actionable, and innovative suggestions to help the user kickstart their project. Frame the suggestions in a way that highlights the potential of AI and encourages them to collaborate with an expert like Navjot. Keep the tone professional, encouraging, and helpful. Format your response as an HTML string with a short heading and an unordered list.`;
-            const userQuery = `Here is my project idea: "${description}"`;
-            
-            const apiKey = ""; // API key will be provided at runtime
-            const apiUrl = \`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=\${apiKey}\`;
-
-            const payload = {
-                contents: [{ parts: [{ text: userQuery }] }],
-                systemInstruction: { parts: [{ text: systemPrompt }] },
-            };
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) throw new Error(\`API request failed with status \${response.status}\`);
-                const result = await response.json();
-                const candidate = result.candidates?.[0];
-
-                if (candidate && candidate.content?.parts?.[0]?.text) {
-                    geminiResponseDiv.innerHTML = candidate.content.parts[0].text;
-                    geminiResponseContainer.classList.remove('hidden');
-                } else {
-                    throw new Error('Unexpected response format from API.');
-                }
-
-            } catch (error) {
-                console.error("Gemini API call failed:", error);
-                geminiResponseDiv.innerHTML = '<p>Sorry, something went wrong while generating ideas. Please try again later.</p>';
-                geminiResponseContainer.classList.remove('hidden');
-            } finally {
-                geminiLoader.style.display = 'none';
-                geminiButton.disabled = false;
-                geminiButton.style.opacity = '1';
-            }
+            const newPost = `
+                <div class="project-card">
+                    <img loading="lazy" src="${image}" alt="${title}" class="blog-card-image">
+                    <div class="project-header">
+                        <h3 class="project-title">${title}</h3>
+                        <p class="project-description">${description}</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="${url}" class="project-link" target="_blank" rel="noopener noreferrer">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>`;
+            document.getElementById('blog-posts-container').insertAdjacentHTML('beforeend', newPost);
+            blogWidgetForm.reset();
+            if(window.gtag){ gtag('event','blog_widget_add',{title}); }
         });
+
+        if(geminiButton){
+          geminiButton.addEventListener('click', async () => {
+              const description = projectDescription.value;
+              if (description.trim().length < 20) { alert('Please provide a more detailed project description (at least 20 characters) to get AI ideas.'); return; }
+              geminiLoader.style.display = 'block';
+              geminiResponseContainer.classList.add('hidden');
+              geminiButton.disabled = true; geminiButton.style.opacity = '0.5';
+
+              const systemPrompt = `You are an expert AI/ML consultant reviewing a potential project idea for Navjot Singh, an AI/ML Engineer. Your goal is to provide 3-4 concise, actionable, and innovative suggestions to help the user kickstart their project. Frame the suggestions in a way that highlights the potential of AI and encourages them to collaborate with an expert like Navjot. Keep the tone professional, encouraging, and helpful. Format your response as an HTML string with a short heading and an unordered list.`;
+              const userQuery = `Here is my project idea: "${description}"`;
+              const apiKey = ""; // API key will be provided at runtime
+              const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+              const payload = { contents: [{ parts: [{ text: userQuery }] }], systemInstruction: { parts: [{ text: systemPrompt }] }, };
+
+              try {
+                  const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                  if (!response.ok) throw new Error(`API request failed with status ${response.status}`);
+                  const result = await response.json();
+                  const candidate = result.candidates?.[0];
+                  if (candidate && candidate.content?.parts?.[0]?.text) {
+                      geminiResponseDiv.innerHTML = candidate.content.parts[0].text;
+                      geminiResponseContainer.classList.remove('hidden');
+                  } else { throw new Error('Unexpected response format from API.'); }
+              } catch (error) {
+                  console.error("Gemini API call failed:", error);
+                  geminiResponseDiv.innerHTML = '<p>Sorry, something went wrong while generating ideas. Please try again later.</p>';
+                  geminiResponseContainer.classList.remove('hidden');
+              } finally {
+                  geminiLoader.style.display = 'none'; geminiButton.disabled = false; geminiButton.style.opacity = '1';
+              }
+          });
+        }
+
+        // Share helper
+        function copyShare(url){
+          navigator.clipboard.writeText(url).then(()=>{
+            if(window.gtag){ gtag('event','copy_share',{url}); }
+            alert('Link copied! Share it anywhere.');
+          });
+        }
+        window.copyShare = copyShare;
+
+        // PWA service worker registration
+        if('serviceWorker' in navigator){
+          window.addEventListener('load', ()=> navigator.serviceWorker.register('/sw.js'));
+        }
+
+        // Subscribe form tracking
+        const subForm = document.getElementById('subscribe-form');
+        if(subForm){
+          subForm.addEventListener('submit', ()=>{ if(window.gtag){ gtag('event','subscribe',{source:'lead_magnet'}); } });
+        }
     </script>
+
+    <!-- NOTES: Create these supporting files at your web root
+      1) /site.webmanifest
+      {
+        "name": "Navjot Singh — AI/ML Engineer",
+        "short_name": "Navjot AI",
+        "start_url": "/",
+        "display": "standalone",
+        "background_color": "#0f0f1e",
+        "theme_color": "#0f0f1e",
+        "icons": [
+          {"src": "/icon-192.png","sizes": "192x192","type": "image/png"},
+          {"src": "/icon-512.png","sizes": "512x512","type": "image/png"}
+        ]
+      }
+
+      2) /sw.js
+      self.addEventListener('install', e=>{
+        e.waitUntil(caches.open('navjot-v1').then(c=>c.addAll(['/','/site.webmanifest','/favicon.ico'])));
+      });
+      self.addEventListener('fetch', e=>{ e.respondWith(caches.match(e.request).then(r=> r || fetch(e.request))); });
+
+      3) /robots.txt
+      User-agent: *
+      Allow: /
+      Sitemap: https://dataterra.ai/sitemap.xml
+
+      4) /sitemap.xml
+      <?xml version="1.0" encoding="UTF-8"?>
+      <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <url><loc>https://dataterra.ai/</loc><priority>1.0</priority></url>
+        <url><loc>https://dataterra.ai/#projects</loc></url>
+        <url><loc>https://dataterra.ai/#blog</loc></url>
+        <url><loc>https://dataterra.ai/#contact</loc></url>
+      </urlset>
+    -->
 </body>
 </html>
-
-
